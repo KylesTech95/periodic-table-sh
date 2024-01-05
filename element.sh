@@ -13,7 +13,7 @@ if [[ $1 ]]
         then
         echo -e "\nI could not find that element in the database."
         else
-    ELEMENT_INFO=$($PSQL "select * from elements inner join properties using(atomic_number) where atomic_number=$1")
+    ELEMENT_INFO=$($PSQL "select * from elements inner join properties using(atomic_number) inner join types using(type_id) where atomic_number=$1")
     READ_ELEMENTS 
     fi
     fi
@@ -26,7 +26,7 @@ if [[ $1 ]]
             then
             echo -e "\nI could not find that element in the database."
             else
-            ELEMENT_INFO=$($PSQL "select * from elements inner join properties using(atomic_number) where symbol='$1'")
+            ELEMENT_INFO=$($PSQL "select * from elements inner join properties using(atomic_number) inner join types using(type_id) where symbol='$1'")
             READ_ELEMENTS
             fi
         fi
@@ -39,7 +39,7 @@ if [[ $1 ]]
             then
             echo -e "\nI could not find that element in the database."
             else
-            ELEMENT_INFO=$($PSQL "select * from elements inner join properties using(atomic_number) where name='$1'")
+            ELEMENT_INFO=$($PSQL "select * from elements inner join properties using(atomic_number) inner join types using(type_id) where name='$1'")
             READ_ELEMENTS
             fi
     fi
