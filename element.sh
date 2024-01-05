@@ -19,7 +19,7 @@ if [[ $1 ]]
     AVAILABLE_ATOMS=$($PSQL "select atomic_number from elements where atomic_number=$1")
     if [[ -z $AVAILABLE_ATOMS ]]
         then
-        echo -e "\nI could not find that element in the database."
+        echo "I could not find that element in the database."
         else
     ELEMENT_INFO=$($PSQL "select * from elements inner join properties using(atomic_number) inner join types using(type_id) where atomic_number=$1")
     READ_ELEMENTS 
@@ -32,7 +32,7 @@ if [[ $1 ]]
         AVAILABLE_SYMBOLS=$($PSQL "select symbol from elements where symbol='$1'")
             if [[ -z $AVAILABLE_SYMBOLS ]]
             then
-            echo -e "\nI could not find that element in the database."
+            echo "I could not find that element in the database."
             else
             ELEMENT_INFO=$($PSQL "select * from elements inner join properties using(atomic_number) inner join types using(type_id) where symbol='$1'")
             READ_ELEMENTS
@@ -45,7 +45,7 @@ if [[ $1 ]]
         AVAILABLE_NAMES=$($PSQL "select name from elements where name='$1'")
             if [[ -z $AVAILABLE_NAMES ]]
             then
-            echo -e "\nI could not find that element in the database."
+            echo "I could not find that element in the database."
             else
             ELEMENT_INFO=$($PSQL "select * from elements inner join properties using(atomic_number) inner join types using(type_id) where name='$1'")
             READ_ELEMENTS
