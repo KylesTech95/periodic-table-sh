@@ -14,7 +14,7 @@
 ``` ./element.sh Hydrogen ```<br>
 ### Expected output
 ``` ./element.sh ```
-<div style="text-align:center"><img height="150" width="700" src="https://github.com/KylesTech95/periodic-table-sh/blob/main/media/media/element-test-H.png?raw=true"></div>
+<div style="text-align:center"><img height="150" width="700" src="https://github.com/KylesTech95/periodic-table-sh/blob/main/media/element-test-H.png?raw=true"></div>
 
 ## What happens if argument is not present
 ``` ./element.sh ```
