@@ -2,7 +2,6 @@
 PSQL="psql -X --username=postgres --dbname=periodic_table --tuples-only -c"
 
 READ_ELEMENTS(){
-    echo $ELEMENT_INFO
     echo $ELEMENT_INFO | while read TYPE_ID BAR ATOM_NUM BAR SYMBOL BAR NAME BAR ATOM_MASS BAR MELTING_POINT BAR BOILING_POINT BAR TYPE
     do
     echo "The element with atomic number $ATOM_NUM is $NAME ($SYMBOL). It's a $TYPE, with a mass of $ATOM_MASS amu. $NAME has a melting point of $MELTING_POINT celsius and a boiling point of $BOILING_POINT celsius."
