@@ -1,6 +1,15 @@
 #! /bin/bash
 PSQL="psql -X --username=postgres --dbname=periodic_table --tuples-only -c"
 
+READ_ELEMENTS(){
+    echo $ELEMENT_INFO | while read ATOM_NUM BAR SYMBOL BAR NAME BAR TYPE BAR ATOMIC_MASS BAR MELTING_POINT BAR BOILING_POINT 
+BAR TYPE_ID
+    do
+    echo "The element with atomic number $ATOM_NUM is $NAME ($SYMBOL). It's a $TYPE, with a mass of $ATOMIC_MASS amu. $NAME ha
+s a melting point of $MELTING_POINT celsius and a boiling point of $BOILING_POINT celsius."
+    done
+}
+
 # if an argument is present
 if [[ $1 ]]
     then
